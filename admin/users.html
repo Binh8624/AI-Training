@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng | AI Training Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="bi bi-cpu-fill"></i>
+            <h2>AI Training</h2>
+            <span>ADMIN</span>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="bi bi-speedometer2"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="blogs.html">
+                    <i class="bi bi-file-earmark-text"></i>
+                    Quản lý Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="courses.html">
+                    <i class="bi bi-mortarboard"></i>
+                    Quản lý khóa học
+                </a>
+            </li>
+
+            <li class="active" data-admin-only>
+                <a href="users.html">
+                    <i class="bi bi-people"></i>
+                    Người dùng
+                </a>
+            </li>
+
+            <li>
+                <a href="comments.html">
+                    <i class="bi bi-chat-dots"></i>
+                    Bình luận
+                </a>
+            </li>
+
+            <li>
+                <a href="stats.html">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    Thống kê
+                </a>
+            </li>
+
+            <li data-admin-only>
+                <a href="settings.html">
+                    <i class="bi bi-gear"></i>
+                    Cài đặt
+                </a>
+            </li>
+
+            <li>
+                <a href="#" data-logout>
+                    <i class="bi bi-box-arrow-right"></i>
+                    Đăng xuất
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Content -->
+    <main class="content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+
+            <div>
+                <h1>Quản lý người dùng</h1>
+                <p>Danh sách tài khoản và phân quyền Admin/User</p>
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+                    <i class="bi bi-bell"></i>
+                    <span class="badge-notify">3</span>
+                </button>
+
+                <div class="user-box">
+                    <img src="https://i.pravatar.cc/100" alt="">
+                    <div>
+                        <strong data-user-name>Bắc</strong>
+                        <p data-user-role>Administrator</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Card -->
+        <div class="dashboard-box">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+
+                <h4>Danh sách người dùng</h4>
+
+                <button id="btnAdd" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i>
+                    Thêm người dùng
+                </button>
+
+            </div>
+
+            <!-- Search -->
+            <div class="search-box">
+                <input
+                    id="txtSearch"
+                    type="text"
+                    class="form-control"
+                    placeholder="Tìm kiếm theo tên hoặc email...">
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Vai trò</th>
+                            <th>Trạng thái</th>
+                            <th>Ngày tạo</th>
+                            <th width="200">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                        <!-- JavaScript render -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="userModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Thông tin người dùng</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Họ tên</label>
+                        <input id="name" class="form-control" type="text">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Email</label>
+                        <input id="email" class="form-control" type="email">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Vai trò</label>
+                        <select id="role" class="form-control">
+                            <option value="User">User</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Trạng thái</label>
+                        <select id="status" class="form-control">
+                            <option value="active">Đang hoạt động</option>
+                            <option value="locked">Đã khóa</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button id="btnSave" class="btn btn-primary">Lưu người dùng</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script type="module">
+    import { requireAuth, renderUserBox, bindLogout } from "./js/auth.js";
+
+    // Trang này chỉ dành cho Admin
+    const currentUser = requireAuth(true);
+    if (currentUser) {
+        renderUserBox(currentUser);
+        bindLogout();
+    }
+</script>
+
+<script type="module" src="js/user.js"></script>
+
+</body>
+
+</html>

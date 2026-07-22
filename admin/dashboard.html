@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Training Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     WRAPPER
+=========================================================== -->
+
+<div class="wrapper">
+
+    <!-- ======================================================
+         SIDEBAR
+    ======================================================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <i class="bi bi-cpu-fill"></i>
+
+            <h2>
+
+                AI Training
+
+            </h2>
+
+            <span>
+
+                ADMIN
+
+            </span>
+
+        </div>
+
+        <!-- Menu -->
+
+        <ul class="menu">
+
+            <li class="active">
+
+                <a href="dashboard.html">
+
+                    <i class="bi bi-speedometer2"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="blogs.html">
+
+                    <i class="bi bi-file-earmark-text"></i>
+
+                    Quản lý Blog
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="courses.html">
+
+                    <i class="bi bi-mortarboard"></i>
+
+                    Quản lý khóa học
+
+                </a>
+
+            </li>
+
+            <li data-admin-only>
+
+                <a href="users.html">
+
+                    <i class="bi bi-people"></i>
+
+                    Người dùng
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="comments.html">
+
+                    <i class="bi bi-chat-dots"></i>
+
+                    Bình luận
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="stats.html">
+
+                    <i class="bi bi-graph-up-arrow"></i>
+
+                    Thống kê
+
+                </a>
+
+            </li>
+
+            <li data-admin-only>
+
+                <a href="settings.html">
+
+                    <i class="bi bi-gear"></i>
+
+                    Cài đặt
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#" data-logout>
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    Đăng xuất
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ======================================================
+         CONTENT
+    ======================================================= -->
+
+    <main class="content">
+
+        <!-- ==================================================
+             TOPBAR
+        =================================================== -->
+
+        <div class="topbar">
+
+            <!-- Tiêu đề -->
+
+            <div>
+
+                <h1>
+
+                    Dashboard
+
+                </h1>
+
+                <p>
+
+                    Chào mừng bạn quay trở lại hệ thống AI Training.
+
+                </p>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="topbar-right">
+
+                <!-- Notification -->
+
+                <button class="icon-btn">
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="badge-notify">
+
+                        3
+
+                    </span>
+
+                </button>
+
+                <!-- Avatar -->
+
+                <div class="user-box">
+
+                    <img
+
+                        src="https://i.pravatar.cc/80"
+
+                        alt="Admin">
+
+                    <div>
+
+                        <strong data-user-name>
+
+                            Bắc
+
+                        </strong>
+
+                        <p data-user-role>
+
+                            Administrator
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==================================================
+             DASHBOARD CARD
+        =================================================== -->
+
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="icon blue">
+
+                        <i class="bi bi-file-earmark-text"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+
+                            18
+
+                        </h2>
+
+                        <p>
+
+                            Bài viết
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="icon purple">
+
+                        <i class="bi bi-mortarboard"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+
+                            12
+
+                        </h2>
+
+                        <p>
+
+                            Khóa học
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+                        <!-- ==========================
+                 CARD 3
+            =========================== -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="icon green">
+
+                        <i class="bi bi-people"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+
+                            154
+
+                        </h2>
+
+                        <p>
+
+                            Người dùng
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================
+                 CARD 4
+            =========================== -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="icon orange">
+
+                        <i class="bi bi-currency-dollar"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>
+
+                            96%
+
+                        </h2>
+
+                        <p>
+
+                            Hoàn thành
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================================================
+             ROW 2
+        ==================================================== -->
+
+        <div class="row mt-4">
+
+            <!-- ==========================
+                 BIỂU ĐỒ
+            =========================== -->
+
+            <div class="col-lg-8">
+
+                <div class="card dashboard-box">
+
+                    <div class="card-header">
+
+                        <h5>
+
+                            Thống kê lượt truy cập
+
+                        </h5>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <canvas
+                            id="visitChart"
+                            height="110">
+
+                        </canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================
+                 KHÓA HỌC NỔI BẬT
+            =========================== -->
+
+            <div class="col-lg-4">
+
+                <div class="card dashboard-box">
+
+                    <div class="card-header">
+
+                        <h5>
+
+                            Khóa học phổ biến
+
+                        </h5>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <!-- Item -->
+
+                        <div class="course-item">
+
+                            <img
+
+                                src="https://www.dunglailaptrinh.com/courses/2.jpg"
+
+                                alt="">
+
+                            <div>
+
+                                <strong>
+
+                                    Python
+
+                                </strong>
+
+                                <small>
+
+                                    420 học viên
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Item -->
+
+                        <div class="course-item">
+
+                            <img
+
+                                src="https://www.dunglailaptrinh.com/courses/3.jpg"
+
+                                alt="">
+
+                            <div>
+
+                                <strong>
+
+                                    Web Fullstack
+
+                                </strong>
+
+                                <small>
+
+                                    368 học viên
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Item -->
+
+                        <div class="course-item">
+
+                            <img
+
+                                src="https://www.dunglailaptrinh.com/courses/4.webp"
+
+                                alt="">
+
+                            <div>
+
+                                <strong>
+
+                                    Python Game
+
+                                </strong>
+
+                                <small>
+
+                                    276 học viên
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Item -->
+
+                        <div class="course-item">
+
+                            <img
+
+                                src="https://www.dunglailaptrinh.com/courses/1.jpg"
+
+                                alt="">
+
+                            <div>
+
+                                <strong>
+
+                                    Logic Math
+
+                                </strong>
+
+                                <small>
+
+                                    198 học viên
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+                <!-- ===================================================
+             HOẠT ĐỘNG GẦN ĐÂY
+        ==================================================== -->
+
+        <div class="row mt-4">
+
+            <div class="col-12">
+
+                <div class="card dashboard-box">
+
+                    <div class="card-header d-flex justify-content-between align-items-center">
+
+                        <h5>
+
+                            Hoạt động gần đây
+
+                        </h5>
+
+                        <button class="btn btn-primary btn-sm">
+
+                            Xem tất cả
+
+                        </button>
+
+                    </div>
+
+                    <div class="card-body p-0">
+
+                        <table class="table table-hover mb-0">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Người thực hiện</th>
+
+                                    <th>Hoạt động</th>
+
+                                    <th>Ngày</th>
+
+                                    <th>Trạng thái</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+
+                                        Bắc
+
+                                    </td>
+
+                                    <td>
+
+                                        Thêm Blog mới
+
+                                    </td>
+
+                                    <td>
+
+                                        22/07/2026
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="badge bg-success">
+
+                                            Thành công
+
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        Admin
+
+                                    </td>
+
+                                    <td>
+
+                                        Cập nhật khóa học Python
+
+                                    </td>
+
+                                    <td>
+
+                                        21/07/2026
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="badge bg-primary">
+
+                                            Đã cập nhật
+
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        Admin
+
+                                    </td>
+
+                                    <td>
+
+                                        Xóa Blog cũ
+
+                                    </td>
+
+                                    <td>
+
+                                        20/07/2026
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="badge bg-danger">
+
+                                            Đã xóa
+
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+
+                                        Bắc
+
+                                    </td>
+
+                                    <td>
+
+                                        Thêm khóa học AI
+
+                                    </td>
+
+                                    <td>
+
+                                        19/07/2026
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="badge bg-success">
+
+                                            Thành công
+
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- ===================================================
+     CHART JS
+==================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById("visitChart");
+
+new Chart(ctx,{
+
+    type:"line",
+
+    data:{
+
+        labels:[
+
+            "T2",
+
+            "T3",
+
+            "T4",
+
+            "T5",
+
+            "T6",
+
+            "T7",
+
+            "CN"
+
+        ],
+
+        datasets:[{
+
+            label:"Lượt truy cập",
+
+            data:[
+
+                120,
+
+                210,
+
+                260,
+
+                180,
+
+                340,
+
+                420,
+
+                510
+
+            ],
+
+            fill:true,
+
+            tension:.4,
+
+            borderWidth:3
+
+        }]
+
+    },
+
+    options:{
+
+        responsive:true,
+
+        plugins:{
+
+            legend:{
+
+                display:false
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script type="module">
+    import { requireAuth, renderUserBox, bindLogout } from "./js/auth.js";
+
+    const user = requireAuth();
+    if (user) {
+        renderUserBox(user);
+        bindLogout();
+    }
+</script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
