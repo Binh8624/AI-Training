@@ -1,0 +1,1193 @@
+/* ==========================================================
+   AI TRAINING ADMIN CSS
+   Part 1
+   Reset + Layout + Sidebar + Topbar
+========================================================== */
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+
+    background:#f1f5f9;
+
+    color:#1e293b;
+
+}
+
+/* =========================
+   ROOT COLOR
+========================= */
+
+:root{
+
+    --primary:#4f46e5;
+
+    --primary-dark:#3730a3;
+
+    --sidebar:#0f172a;
+
+    --success:#22c55e;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --info:#0ea5e9;
+
+    --white:#ffffff;
+
+    --border:#e2e8f0;
+
+    --shadow:
+
+        0 12px 25px
+
+        rgba(0,0,0,.08);
+
+}
+
+/* =========================
+   WRAPPER
+========================= */
+
+.wrapper{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+    width:260px;
+
+    /* background:var(--sidebar); */
+    background:linear-gradient(
+180deg,
+#0f172a,
+#1e293b
+);
+
+    color:white;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    padding:25px;
+
+    overflow:auto;
+
+}
+
+/* Logo */
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.logo i{
+
+    font-size:50px;
+
+    color:#6366f1;
+
+}
+
+.logo h2{
+
+    margin-top:10px;
+
+    font-size:24px;
+
+}
+
+.logo span{
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    color:#94a3b8;
+
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu{
+
+    list-style:none;
+
+}
+
+.menu li{
+
+    margin-bottom:10px;
+
+}
+
+.menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.menu a i{
+
+    font-size:20px;
+
+}
+
+.menu a:hover{
+
+    background:#1e293b;
+
+}
+
+.menu .active a{
+
+    background:var(--primary);
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:35px;
+
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+.topbar p{
+
+    margin-top:6px;
+
+    color:#64748b;
+
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+/* =========================
+   ICON BUTTON
+========================= */
+
+.icon-btn{
+
+    position:relative;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.icon-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.icon-btn i{
+
+    font-size:22px;
+
+}
+
+/* Notification */
+
+.badge-notify{
+
+    position:absolute;
+
+    right:5px;
+
+    top:5px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:red;
+
+    color:white;
+
+    font-size:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* =========================
+   USER BOX
+========================= */
+
+.user-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:white;
+
+    padding:10px 16px;
+
+    border-radius:15px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.user-box img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.user-box strong{
+
+    display:block;
+
+}
+
+.user-box p{
+
+    margin:0;
+
+    font-size:13px;
+
+    color:#64748b;
+
+}
+
+/* ==========================================================
+   AI TRAINING ADMIN CSS
+   Part 2
+   Dashboard Card + Box + Table + Button + Form
+========================================================== */
+
+
+/* =========================
+   DASHBOARD CARD
+========================= */
+
+.dashboard-card{
+
+    background:var(--white);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+        0 20px 35px
+
+        rgba(79,70,229,.15);
+
+}
+
+/* =========================
+   ICON
+========================= */
+
+.dashboard-card .icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    color:white;
+
+}
+
+/* Màu từng icon */
+
+.icon.blue{
+
+    background:#3b82f6;
+
+}
+
+.icon.green{
+
+    background:#22c55e;
+
+}
+
+.icon.orange{
+
+    background:#f59e0b;
+
+}
+
+.icon.purple{
+
+    background:#6366f1;
+
+}
+
+/* Text */
+
+.dashboard-card h2{
+
+    font-size:34px;
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.dashboard-card p{
+
+    margin-top:6px;
+
+    color:#64748b;
+
+}
+
+
+/* =========================
+   DASHBOARD BOX
+========================= */
+
+.dashboard-box{
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+}
+
+.dashboard-box .card-header{
+
+    background:white;
+
+    border-bottom:1px solid var(--border);
+
+    padding:18px 24px;
+
+}
+
+.dashboard-box .card-header h5{
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.dashboard-box .card-body{
+
+    padding:25px;
+
+}
+
+
+/* =========================
+   COURSE ITEM
+========================= */
+
+.course-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #f1f5f9;
+
+}
+
+.course-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.course-item img{
+
+    width:70px;
+
+    height:55px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+.course-item strong{
+
+    display:block;
+
+    margin-bottom:4px;
+
+}
+
+.course-item small{
+
+    color:#64748b;
+
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#f8fafc;
+
+}
+
+.table thead th{
+
+    padding:16px;
+
+    font-weight:700;
+
+    color:#334155;
+
+}
+
+.table tbody td{
+
+    padding:18px 16px;
+
+    vertical-align:middle;
+
+}
+
+.table-hover tbody tr{
+
+    transition:.25s;
+
+}
+
+.table-hover tbody tr:hover{
+
+    background:#eef2ff;
+
+}
+
+
+/* =========================
+   BLOG IMAGE
+========================= */
+
+.blog-image{
+
+    width:90px;
+
+    height:60px;
+
+    border-radius:12px;
+
+    object-fit:cover;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    border:none;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.btn-warning{
+
+    color:white;
+
+}
+
+.btn-warning:hover{
+
+    color:white;
+
+}
+
+.btn-danger:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.btn-success:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+
+    position:relative;
+
+    margin-bottom:25px;
+
+}
+
+.search-box input{
+
+    border-radius:14px;
+
+    padding:12px 18px;
+
+    border:1px solid var(--border);
+
+}
+
+.search-box input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 0 0 .2rem
+
+        rgba(79,70,229,.15);
+
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-control{
+
+    border-radius:12px;
+
+    padding:12px;
+
+    border:1px solid var(--border);
+
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 0 0 .2rem
+
+        rgba(79,70,229,.15);
+
+}
+
+textarea.form-control{
+
+    min-height:140px;
+
+    resize:vertical;
+
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+/* ==========================================================
+   AI TRAINING ADMIN CSS
+   Part 3
+   Modal + Badge + Responsive + Animation + Utility
+==========================================================*/
+
+
+/*=========================
+    MODAL
+==========================*/
+
+.modal-content{
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.modal-header{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+}
+
+.modal-header .btn-close{
+
+    filter:invert(1);
+
+}
+
+.modal-body{
+
+    padding:25px;
+
+}
+
+.modal-footer{
+
+    border-top:1px solid var(--border);
+
+    padding:18px;
+
+}
+
+
+/*=========================
+    CARD
+==========================*/
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/*=========================
+    BADGE
+==========================*/
+
+.badge{
+
+    padding:8px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.badge.bg-success{
+
+    background:#22c55e !important;
+
+}
+
+.badge.bg-danger{
+
+    background:#ef4444 !important;
+
+}
+
+.badge.bg-warning{
+
+    background:#f59e0b !important;
+
+}
+
+.badge.bg-primary{
+
+    background:#4f46e5 !important;
+
+}
+
+
+/*=========================
+    CANVAS
+==========================*/
+
+canvas{
+
+    width:100% !important;
+
+}
+
+
+/*=========================
+    SCROLLBAR
+==========================*/
+
+.sidebar::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#475569;
+
+    border-radius:10px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:#1e293b;
+
+}
+
+
+/*=========================
+    ANIMATION
+==========================*/
+
+.dashboard-card,
+
+.dashboard-box,
+
+.user-box,
+
+.icon-btn{
+
+    animation:fadeUp .5s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=========================
+    HOVER
+==========================*/
+
+.dashboard-box:hover{
+
+    transform:translateY(-4px);
+
+    transition:.3s;
+
+}
+
+.course-item:hover{
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+}
+
+.table tbody tr{
+
+    transition:.25s;
+
+}
+
+.table tbody tr:hover{
+
+    transform:scale(1.005);
+
+}
+
+
+/*=========================
+    IMAGE
+==========================*/
+
+img{
+
+    max-width:100%;
+
+}
+
+
+/*=========================
+    FOOTER
+==========================*/
+
+.footer{
+
+    margin-top:35px;
+
+    padding:18px;
+
+    text-align:center;
+
+    color:#64748b;
+
+}
+
+
+/*=========================
+    UTILITY
+==========================*/
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mb-30{
+
+    margin-bottom:30px;
+
+}
+
+.rounded-xl{
+
+    border-radius:20px;
+
+}
+
+.shadow-custom{
+
+    box-shadow:var(--shadow);
+
+}
+
+.text-primary{
+
+    color:var(--primary)!important;
+
+}
+
+
+/*=========================
+    RESPONSIVE
+==========================*/
+
+@media(max-width:1200px){
+
+    .dashboard-card{
+
+        padding:18px;
+
+    }
+
+    .dashboard-card h2{
+
+        font-size:28px;
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+    .content{
+
+        width:100%;
+
+        margin-left:0;
+
+    }
+
+    .wrapper{
+
+        flex-direction:column;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .dashboard-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .dashboard-card .icon{
+
+        margin-bottom:12px;
+
+    }
+
+    .topbar-right{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+    .course-item{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .table{
+
+        font-size:13px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .content{
+
+        padding:20px;
+
+    }
+
+    .logo h2{
+
+        font-size:20px;
+
+    }
+
+    .dashboard-card h2{
+
+        font-size:24px;
+
+    }
+
+    .icon{
+
+        width:60px;
+
+        height:60px;
+
+    }
+
+}
